@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Bad for loop</title>
+</head>
+<body>
+    <script>
+    for(var i = 1; i <= 10; i++) {
+        const para = document.createElement('p');
+        para.textContent = 'This is paragraph ' + i + '.';
+        document.body.appendChild(para);
+        para.onclick = function() {
+        alert('Hello from paragraph ' + i + '!');
+        }
+    }
+/*
+解决办法：最简单的解决方案是用 let 而不是 var 来声明迭代变量，这样与函数相关的 i 的值对每个迭代都是唯一的。
+*/
+    </script>
+</body>
+</html>
+
