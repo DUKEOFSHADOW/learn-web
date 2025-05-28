@@ -1,0 +1,56 @@
+body {
+    background-color: #fff;
+    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1em;
+    margin: 0;
+  }
+
+  h1 {
+    color: hotpink;
+    font-size: 2em;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    border-bottom: 10px dotted purple;
+  }
+
+  h2 {
+    font-size: 1.5em;
+    font-style: italic;
+  }
+
+  .job-title {
+    color: #999999;
+    font-weight: bold;
+  }
+
+  a:link {
+    color: #fb6542;
+  }
+
+  a:visited {
+    color: #42fb42;
+  }
+
+  a:hover {
+    text-decoration: none;
+    color: blue;
+  }
+
+  ul {
+    background-color: #eeeeee; /* 设置背景颜色 */
+    border: 5px solid purple; /* 设置边框为5像素宽的紫色 */
+    padding: 20px; /* 设置内边距为10像素 */
+  }
+
+  .highlight:hover {
+    color: #f6ff00;
+    font-weight: bold;
+  }
+
+  article p:first-child::first-line {
+    color: red;
+  }
+
+  article::after {
+    content: "end";
+  }

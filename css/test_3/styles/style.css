@@ -1,0 +1,116 @@
+img {
+    border: 5px solid darkblue;
+}
+
+.box {
+    border: 5px solid darkblue;
+    
+    width: 200px;
+}
+
+.box::after {
+    content: "hello world";
+    display: block;
+    color: red;
+    font-size: 20px;
+}
+
+.body {
+    font: 1.2em sans-serif;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.wrapper > * {
+    margin: 20px;
+}
+
+.box2 {
+    border: 5px solid darkblue;
+    width: 50%;
+}
+
+.box3 {
+    background-image: url(../images/balloons.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 200px;
+    height: 150px;
+    border: 1px solid blue; /* 调试用 */
+    margin: 20px; /* 保持与其他元素一致的间距 */
+    background-attachment: scroll;
+}
+
+.wrapper2 {
+    display: flex;
+}
+
+.box4 {
+    width: 400px;
+    height: 80px;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    margin: 20px;
+}
+
+.a {
+    background-image: linear-gradient(
+        105deg,
+        rgb(0 249 255 / 100%) 39%,
+        rgb(51 56 57 / 100%) 96%
+    );
+}
+
+.b {
+    background-image: radial-gradient(
+        circle,
+        rgb(0 249 255 / 100%) 39%,
+        rgb(51 56 57 / 100%) 96%
+    );
+    background-size: 100px 50px;
+}
+
+.wrapper3 {
+    display: flex;
+}
+
+.box5 {
+    width: 500px;
+    height: 80px;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    margin: 20px;
+    background-image:
+    url(https://mdn.github.io/shared-assets/images/examples/star.png),
+    url(https://mdn.github.io/shared-assets/images/examples/big-star.png);
+}
+
+* {
+    padding: 0.2em;
+}
+
+.border {
+    width: 500px;
+    margin: 10%;
+    background-color: #567895;
+    border: 5px solid #0b385f;
+    border-bottom-style: dashed;
+    color: #fff;
+}
+
+h2 {
+    border-top: 2px dotted rebeccapurple;
+    border-bottom: 1em double rgb(24 163 78);
+}
+
+.yuan {
+    width: 500px;
+    min-height: 110px;
+    padding: 0.5em;
+    margin: 10%;
+    border: 10px solid rebeccapurple;
+    border-radius: 1em;
+    border-top-right-radius: 10% 30%;
+}

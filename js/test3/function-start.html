@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Function start</title>
+    <style>
+        .msgBox {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 242px;
+        background: #eee;
+    }
+
+        .msgBox p {
+        line-height: 1.5;
+        padding: 10px 20px;
+        color: #333;
+        padding-left: 82px;
+        background-position: 25px center;
+        background-repeat: no-repeat;
+    }
+
+        .msgBox button {
+        background: none;
+        border: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 1.1rem;
+        color: #aaa;
+    }
+
+    </style>
+</head>
+<body>
+    <button>Display message box</button>
+
+    <script>
+    const btn = document.querySelector("button");
+    btn.onclick = function(){
+        displayMessage("Your inbox is almost full — delete some mails", "warning");
+        displayMessage("Brian: Hi there, how are you today?", "chat");
+            };
+      function displayMessage(msgText,msgType) { // 定义一个名为 displayMessage 的函数
+        const html = document.querySelector("html"); // 获取文档中的 html 元素
+
+        const panel = document.createElement("div"); // 创建一个新的 div 元素，作为消息框的面板
+        panel.setAttribute("class", "msgBox"); // 给面板设置 class属性，值为 "msgBox"，用于CSS样式控制
+        html.appendChild(panel); // 将创建的面板添加到 html 元素中，使其在页面上可见
+
+        const msg = document.createElement("p"); // 创建一个新的 p 元素，用于显示消息文本
+        msg.textContent = msgText; // 设置 p 元素的文本内容
+        panel.appendChild(msg); // 将 p 元素添加到消息框面板中
+
+        const closeBtn = document.createElement("button"); // 创建一个新的 button 元素，作为关闭按钮
+        closeBtn.textContent = "x"; // 设置关闭按钮的文本内容为 "x"
+        panel.appendChild(closeBtn); // 将关闭按钮添加到消息框面板中
+
+        closeBtn.onclick = function () { // 为关闭按钮设置点击事件处理函数
+        panel.parentNode.removeChild(panel); // 当按钮被点击时，从其父节点中移除消息框面板 (panel)
+};
+    if(msgType === "warning") {
+        msg.style.backgroundImage = "url(icons/warning.png)";
+        panel.style.backgroundColor = "red";
+    }else if(msgType === "chat"){
+        msg.style.backgroundImage = "url(icons/chat.png)";
+        panel.style.backgroundColor = "aqua";
+    }else{
+        msg.style.paddingLeft = "20px";
+    }
+}
+    </script>
+</body>
+</html>

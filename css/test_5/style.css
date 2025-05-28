@@ -1,0 +1,75 @@
+body {
+    width: 300px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    font-family: sans-serif;
+}
+
+p {
+    font-size: 2rem;
+    text-align: center;
+    line-height: 1.4;
+}
+
+a {
+    outline-color: transparent;
+}
+
+a:link {
+    color: #6900ff;
+}
+
+a:visited {
+    color: #a5c300;
+}
+
+a:focus {
+    text-decoration: none;
+    background: #bae498;
+}
+
+a:hover {
+    text-decoration: none;
+    background: #cdfeaa;
+}
+
+a:active {
+    background: #6900ff;
+    color: #cdfeaa;
+}
+
+a[href^="http"] {
+    background: url("external-link-52.png") no-repeat 100% 0;
+    background-size: 16px 16px;
+    padding-right: 19px;
+}
+
+.container {
+    display: flex;
+    gap: 0.625%;
+}
+
+.container a {
+    flex: 1;
+    text-decoration: none;
+    outline-color: transparent;
+    text-align: center;
+    line-height: 3;
+    color: black;
+}
+
+.container a:link,
+.container a:visited,
+.container a:focus {
+    background: palegoldenrod;
+    color: black;
+}
+
+.container a:hover{
+    background: orange;
+}
+
+.container a:active {
+    background: darkred;
+    color: white;
+}
