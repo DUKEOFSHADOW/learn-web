@@ -35,6 +35,18 @@ const listSummary = computed(()=> {
     const numberFinishedItems = ToDoItems.value.filter((item)=>item.done).length;
     return `${numberFinishedItems} out of ${ToDoItems.value.length} items completed`;
 });
+
+// 删除待办事项
+const deleteToDo = (toDoId) => {
+  const itemIndex = ToDoItems.value.findIndex((item) => item.id === toDoId);
+  ToDoItems.value.splice(itemIndex, 1);
+};
+
+// 编辑待办事项
+const editToDo = (toDoId, newLabel) => {
+  const toDoToEdit = ToDoItems.value.find((item) => item.id === toDoId);
+  toDoToEdit.label = newLabel;
+};
 </script>
 
 <template>
@@ -48,7 +60,9 @@ const listSummary = computed(()=> {
           :label="item.label"
           :done="item.done"
           :id="item.id"
-          @checkbox-changed="updateDoneStatus(item.id)"></to-do-item>
+          @checkbox-changed="updateDoneStatus(item.id)"
+          @item-deleted="deleteToDo(item.id)"
+          @item-edited="editToDo(item.id, $event)"></to-do-item>
         </li>
       </ul>
     </div>
