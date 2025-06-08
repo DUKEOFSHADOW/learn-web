@@ -6,7 +6,8 @@
         :id="id"
         type="text"
         autocomplete="off"
-        v-model.lazy.trim="newLabel" />
+        v-model.lazy.trim="newLabel"
+        ref="labelInput" />
     </div>
     <div class="btn-group">
         <button type="button" class="btn" @click="onCancel">
@@ -46,6 +47,10 @@
         onCancel() {
         this.$emit("edit-cancelled");
         },
+    },
+    mounted() {
+        const labelInputRef = this.$refs.labelInput;
+        labelInputRef.focus();
     },
     };
 </script>
